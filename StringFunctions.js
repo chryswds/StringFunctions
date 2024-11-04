@@ -75,7 +75,7 @@ console.log(formattedEmail);
 //Using template Literals
 const csvData = `"John Doe", 30, "John.Doe@example.com"
 "Jane Smith", 25, "Jane_Smith@example.com"
-"Michael Johnson, 37, "MichaelJohnson@example.com"`
+"Michael Johnson", 37, "MichaelJohnson@example.com"`
 
 //Create a function to process this data
 //Making sure the file follows a csv data structure
@@ -102,12 +102,11 @@ function processCSVData(csvData){
             //Email: John.Doe@example.com
         };
     });
-
-    return formattedData; //constains the C and R matrix as Key:Value pairs
-
-
-
+    return formattedData; //contains the C and R matrix as Key:Value pairs
 }
 
-const formattedcsvData = processCSVData(csvData);
-console.log("Formatted Data: ", formattedcsvData);
+const formattedCSVData = processCSVData(csvData);
+console.log("Formatted Data: ", formattedCSVData);
+
+
+
