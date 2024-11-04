@@ -109,4 +109,11 @@ const formattedCSVData = processCSVData(csvData);
 console.log("Formatted Data: ", formattedCSVData);
 
 
+let name = "Myke Tyson"
+let age = 60;
+
+let formattedString = `My name is ${name} and I am ${age} years old!`;
+
+console.log(formattedString);
+
 
