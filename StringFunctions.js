@@ -30,6 +30,41 @@ console.log(originalStory);
 
 //Perform search and replace
 
-const manipulatedStory = originalStory.replace(/quick/g, "slow");
+const manipulatedStory = originalStory.replace(/quick/g, "slow");// /g - REGEX
 
 console.log(manipulatedStory);
+
+
+
+//Function to validate and process email
+
+function validateEmail(email) {
+    //Validate the email
+    //Email: username @ company . domain
+    const emailRegex = /^[a-zA-Z0-9._-]{2,}@[a-zA-Z0-9_.-]{2,}\.[a-zA-Z]{2,} $/
+    //+ is used for repetition but this case uses explicit limits {2,}
+
+
+    //Validate that we have an email that complies with the requirement
+
+    if(emailRegex.test(email)) {
+        //if the email passes the regex test
+        //We get a true and do the following
+        return email.toLowerCase();
+    }
+    else {
+
+        return "Invalid Email Format!"
+    }
+
+}
+
+//test email input and check if they comply
+const userEmail = "John.Doe@example.com"
+
+console.log(userEmail);
+
+//Format the email and return the email if it passes in small letters
+const formattedEmail = validateEmail(userEmail);
+
+console.log(formattedEmail);
