@@ -68,3 +68,46 @@ console.log(userEmail);
 const formattedEmail = validateEmail(userEmail);
 
 console.log(formattedEmail);
+
+
+
+//Simulate CSV data Structure
+//Using template Literals
+const csvData = `"John Doe", 30, "John.Doe@example.com"
+"Jane Smith", 25, "Jane_Smith@example.com"
+"Michael Johnson, 37, "MichaelJohnson@example.com"`
+
+//Create a function to process this data
+//Making sure the file follows a csv data structure
+
+function processCSVData(csvData){
+    //Split the columns and rows
+    const rows = csvData.split('\n'); //the data is separated by line breaks \n
+    const formattedData = rows.map(row => {
+        //Iterating and mapping all the values in the rows
+        //csv, comma separated
+
+        const columns = row.split(',');
+        //C and R "michal Johnson" == [0,2]
+        //C and R
+
+        return{
+            //return a key:value pair data structure
+            name : columns[0].replace(/"/g, '').trim(),
+            //name == C0 and R0 == "John Doe" -> replace "" with nothing = John Doe
+            age : parseInt(columns[1]),
+            email : columns[2].replace(/"/g, '').trim()
+            //Name: John Doe
+            //Age: 30
+            //Email: John.Doe@example.com
+        };
+    });
+
+    return formattedData; //constains the C and R matrix as Key:Value pairs
+
+
+
+}
+
+const formattedcsvData = processCSVData(csvData);
+console.log("Formatted Data: ", formattedcsvData);
